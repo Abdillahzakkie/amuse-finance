@@ -1,10 +1,7 @@
 import { createContext, Component } from "react";
 import { ethers } from "ethers";
 import axios from "axios";
-import {
-	abi as AmuseTokenABI,
-	address as amuseTokenAddress,
-} from "./contractsABI/AmuseTokenABI";
+// import { initializeAlchemy } from "@alch/alchemy-sdk";
 
 const web3Context = createContext();
 class Web3Provider extends Component {
@@ -18,7 +15,6 @@ class Web3Provider extends Component {
 			provider: null,
 			alchemy: null,
 			etherscanApiKey: "AC7C3RUJTUADG8A7QRQNFQ68QJ2WXED2DZ",
-			amuseToken: null,
 		};
 	}
 
@@ -33,21 +29,12 @@ class Web3Provider extends Component {
 	connectWeb3Modal = async () => {
 		const provider = new ethers.providers.Web3Provider(window.ethereum);
 		const user = await provider.send("eth_requestAccounts", []);
-
-		const amuseToken = new ethers.Contract(
-			amuseTokenAddress,
-			AmuseTokenABI,
-			provider
-		);
-
-		await this.loadBlockchainData(provider);
-
 		this.setState({
 			loading: false,
 			user,
 			provider,
-			amuseToken,
 		});
+		await this.loadBlockchainData(provider);
 	};
 
 	// load blockchain data
