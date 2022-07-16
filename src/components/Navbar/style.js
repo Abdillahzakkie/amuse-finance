@@ -84,6 +84,8 @@ export const NavbarWrapper = styled.div`
 
 				.icon {
 					font-size: 1.75em;
+					height: 100%;
+					align-self: center;
 				}
 			}
 		}

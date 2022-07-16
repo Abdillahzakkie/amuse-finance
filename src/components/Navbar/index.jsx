@@ -64,10 +64,13 @@ function Navbar() {
 	return (
 		<NavbarWrapper className="grid">
 			<div className="grid nav-container">
-				<div className="grid logo">
-					<img src={logo} alt="logo" />
-					<h2>amuse</h2>
-				</div>
+				<Link to="/" className="grid">
+					<div className="grid logo">
+						<img src={logo} alt="logo" />
+						<h2>amuse</h2>
+					</div>
+				</Link>
+
 				<form className="grid form-group" onSubmit={_handleSubmit}>
 					<input
 						type="text"
@@ -81,7 +84,9 @@ function Navbar() {
 				<ul className="grid nav-list nav-list-xl">
 					{_navListDefaults}
 					<li className="grid list-item">
-						<BiUserCircle className="icon" />
+						<Link to="/me">
+							<BiUserCircle className="grid icon" />
+						</Link>
 					</li>
 					<li className="grid list-item">
 						<BiWalletAlt className="icon" />
@@ -91,7 +96,9 @@ function Navbar() {
 				{/* normal screens nl */}
 				<ul className="grid nav-list nav-list-nl">
 					<li className="grid list-item">
-						<BiUserCircle className="icon" />
+						<Link to="/me">
+							<BiUserCircle className="grid icon" />
+						</Link>
 					</li>
 					<li className="grid list-item">
 						<BiWalletAlt className="icon" />
@@ -107,11 +114,7 @@ function Navbar() {
 				{/* small screens xs */}
 				<ul className="grid nav-list nav-list-xs">
 					<li className="grid">
-						<BiSearch
-							className="icon"
-							onClick={_handleMobileSearchState}
-							// onClick={() => setMobileSearchState((state) => !state)}
-						/>
+						<BiSearch className="icon" onClick={_handleMobileSearchState} />
 					</li>
 					<li className="grid">{_toggleButton}</li>
 
