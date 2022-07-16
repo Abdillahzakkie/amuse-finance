@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+*,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--off-white: #f1f5f8;
+	--white: #fff;
+	--red: #e73a3a;
+	--yellow: #fdc00f;
+	--orange: #fe8c39;
+	--darkGrey: #333;
+	--dark: #191b1f;
+	/* --grey: #565a69; */
+	--grey: #2c2f36;
+	--mainGreen: #29ca8e;
+	--mainBlue: #0c6cf2;
+	--blue: #2172e5;
+	--hoverBlue: #bfdbfe;
+	--letter-spacing: 2px;
+	--wordSpacing: 0.25rem;
+	--transition: all 2s ease-in-out;
+
+	--nav-height: 70px;
+	--max-width: 1440px;
+	--trade-height: 500px;
+}
+
+li {
+	list-style: none;
+	display: inline;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+input,
+button,
+textarea {
+	border: none;
+	outline: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+body {
+	background: var(--white);
+	line-height: 1.8rem;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 0.45vw;
+}
+
+::-webkit-scrollbar-thumb {
+	/* background: #212121; */
+	background: var(--dark);
+	border-radius: 1em;
+}
+
+::-webkit-scrollbar-track {
+	background: #dcdfe1;
+	background-clip: content-box;
+}
+
+.App {
+	/* max-width: var(--max-width); */
+	height: auto;
+	align-items: center;
+	margin: auto;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	margin: 0 auto;
+}
+@media (max-width: 768px) {
+	.ethLogo {
+		display: none !important;
+	}
+}

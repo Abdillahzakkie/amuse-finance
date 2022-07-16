@@ -1,0 +1,9 @@
+node_modules
+run.sh
+.git
+.env
+.env.example
+compose.yaml
+Dockerfile
+.dockerignore
+.gitinore
