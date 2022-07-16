@@ -13,8 +13,8 @@ export const NavbarWrapper = styled.div`
 		grid-template-columns: repeat(12, 1fr);
 		/* background: var(--off-white); */
 		/* color: var(--dark); */
-		background: var(--dark);
-		color: var(--white);
+		background: var(--off-white);
+		color: var(--dark);
 
 		padding: 0 0.5em;
 		grid-gap: 0 0.5em;
