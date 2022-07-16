@@ -71,7 +71,8 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-	background: #dcdfe1;
+	/* background: #dcdfe1; */
+	background: var(--white);
 	background-clip: content-box;
 }
 
