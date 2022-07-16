@@ -28,6 +28,5 @@ src/components/Card
 src/components/Form
 src/components/Swap
 src/Context/trade.jsx
-src/components/web3.jsx
 src/pages/Trade
 src/data
