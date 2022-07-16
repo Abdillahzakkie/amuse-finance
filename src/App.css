@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 *,
 ::before,
@@ -14,12 +15,14 @@
 	--red: #e73a3a;
 	--yellow: #fdc00f;
 	--orange: #fe8c39;
+	--mainBlue: #0a3b63;
+
 	--darkGrey: #333;
 	--dark: #191b1f;
 	/* --grey: #565a69; */
 	--grey: #2c2f36;
 	--mainGreen: #29ca8e;
-	--mainBlue: #0c6cf2;
+	/* --mainBlue: #0c6cf2; */
 	--blue: #2172e5;
 	--hoverBlue: #bfdbfe;
 	--letter-spacing: 2px;
@@ -63,7 +66,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
 	/* background: #212121; */
-	background: var(--dark);
+	background: var(--mainBlue);
 	border-radius: 1em;
 }
 
@@ -77,6 +80,7 @@ body {
 	height: auto;
 	align-items: center;
 	margin: auto;
+	font-family: inter;
 }
 
 .grid {
@@ -84,9 +88,4 @@ body {
 	grid-template-columns: 1fr;
 	grid-template-rows: auto;
 	margin: 0 auto;
-}
-@media (max-width: 768px) {
-	.ethLogo {
-		display: none !important;
-	}
 }
