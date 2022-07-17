@@ -11,17 +11,18 @@ const _navListDefaults = (
 	<>
 		<li className="grid">
 			<p>
-				<Link to="/dashboard">Dashboard</Link>
+				<Link to="/">Home</Link>
 			</p>
+		</li>
+		<li className="grid">
+			<Link to="/dashboard">Dashboard</Link>
 		</li>
 		<li className="grid">
 			<Link to="/trade">Trade</Link>
 		</li>
+
 		<li className="grid">
-			<Link to="/resources">Resources</Link>
-		</li>
-		<li className="grid">
-			<Link to="/create">Create</Link>
+			<Link to="/contact">Contact</Link>
 		</li>
 	</>
 );
@@ -62,7 +63,7 @@ function Navbar() {
 	};
 
 	return (
-		<NavbarWrapper className="grid">
+		<NavbarWrapper className="grid navbar">
 			<div className="grid nav-container">
 				<Link to="/" className="grid">
 					<div className="grid logo">
