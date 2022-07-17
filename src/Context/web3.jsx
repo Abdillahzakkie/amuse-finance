@@ -1,7 +1,7 @@
 import { createContext, Component } from "react";
 import { ethers } from "ethers";
+import Web3Modal from "web3modal";
 import axios from "axios";
-// import { initializeAlchemy } from "@alch/alchemy-sdk";
 
 const web3Context = createContext();
 class Web3Provider extends Component {
@@ -14,7 +14,8 @@ class Web3Provider extends Component {
 			user: null,
 			provider: null,
 			alchemy: null,
-			etherscanApiKey: "AC7C3RUJTUADG8A7QRQNFQ68QJ2WXED2DZ",
+			ETHERSCAN_API_KEY: "AC7C3RUJTUADG8A7QRQNFQ68QJ2WXED2DZ",
+			INFURA_API_KEY: "c5cc79763cc845a2a979de5b3d6a27aa",
 		};
 	}
 
@@ -27,14 +28,26 @@ class Web3Provider extends Component {
 	};
 
 	connectWeb3Modal = async () => {
-		const provider = new ethers.providers.Web3Provider(window.ethereum);
-		const user = await provider.send("eth_requestAccounts", []);
+		const providerOptions = {};
+
+		const web3Modal = new Web3Modal({
+			network: "mainnet", // optional
+			cacheProvider: false, // optional
+			providerOptions, // required
+		});
+
+		const _instance = await web3Modal.connect();
+		const provider = new ethers.providers.Web3Provider(_instance);
+		const _signer = provider.getSigner();
+		const _user = await _signer.getAddress();
+
+		// await this.loadBlockchainData(provider);
+
 		this.setState({
 			loading: false,
-			user,
+			user: _user,
 			provider,
 		});
-		await this.loadBlockchainData(provider);
 	};
 
 	// load blockchain data
@@ -79,7 +92,7 @@ class Web3Provider extends Component {
 	_getERC20TransferEvents = async (
 		_provider,
 		_tokenAddress,
-		{ etherscanApiKey } = this.state
+		{ ETHERSCAN_API_KEY } = this.state
 	) => {
 		try {
 			const _tempData = [];
@@ -95,7 +108,7 @@ class Web3Provider extends Component {
 					&startblock=${_startBlock}
 					&endblock=${_latestBlock}
 					&sort=asc
-					&apikey=${etherscanApiKey}
+					&apikey=${ETHERSCAN_API_KEY}
 				`;
 
 				const { data } = await axios.get(_url);
