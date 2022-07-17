@@ -1,12 +1,14 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
+
 import Navbar from "./components/Navbar";
 import ScrollTop from "./components/ScrollTop";
+import { handleScrollEffect } from "./components/helpers/handleScrollEffect";
+
 import Home from "./pages/Home";
 import MyAccount from "./pages/MyAccount";
 import Trade from "./pages/Trade";
-import { handleScrollEffect } from "./components/helpers/handleScrollEffect";
 import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
 	return (
