@@ -9,6 +9,7 @@ import MyAccount from "./pages/MyAccount";
 import Trade from "./pages/Trade";
 import Footer from "./components/Footer";
 import "./App.css";
+import Contact from "./pages/Contact";
 
 function App() {
 	return (
@@ -16,8 +17,9 @@ function App() {
 			<Navbar />
 			<Routes>
 				<Route exact path="/" element={<Home />} />
-				<Route path="/trade/token/:tokenAddress" element={<Trade />} />
 				<Route path="/me" element={<MyAccount />} />
+				<Route path="/contact" element={<Contact />} />
+				<Route path="/trade/token/:tokenAddress" element={<Trade />} />
 			</Routes>
 			<ScrollTop />
 			<Footer />
