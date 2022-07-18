@@ -10,6 +10,7 @@ import Trade from "./pages/Trade";
 import Footer from "./components/Footer";
 import "./App.css";
 import Contact from "./pages/Contact";
+import Presale from "./pages/Presale";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 				<Route path="/me" element={<MyAccount />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/trade/token/:tokenAddress" element={<Trade />} />
+				<Route path="/presale" element={<Presale />} />
 			</Routes>
 			<ScrollTop />
 			<Footer />
