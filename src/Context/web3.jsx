@@ -16,6 +16,7 @@ class Web3Provider extends Component {
 			alchemy: null,
 			ETHERSCAN_API_KEY: "AC7C3RUJTUADG8A7QRQNFQ68QJ2WXED2DZ",
 			INFURA_API_KEY: "c5cc79763cc845a2a979de5b3d6a27aa",
+			AMD_ETH_RATE: 10000,
 		};
 	}
 
