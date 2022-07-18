@@ -2,6 +2,15 @@
 	"name": "client",
 	"version": "0.1.0",
 	"private": true,
+	"scripts": {
+		"start": "node server.js",
+		"dev": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"build:css": "postcss src/components/tailwindStyles/tailwind.css -o src/components/tailwindStyles/main.css",
+		"build:watch": "postcss src/components/tailwindStyles/tailwind.css -o src/components/tailwindStyles/main.css --watch"
+	},
 	"dependencies": {
 		"@alch/alchemy-sdk": "^1.0.8",
 		"@testing-library/jest-dom": "^5.16.4",
@@ -28,13 +37,6 @@
 		"typewriter-effect": "^2.19.0",
 		"web-vitals": "^2.1.4",
 		"web3modal": "^1.9.8"
-	},
-	"scripts": {
-		"start": "node server.js",
-		"dev": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
 		"extends": [
